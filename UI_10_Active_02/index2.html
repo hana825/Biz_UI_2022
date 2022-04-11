@@ -91,6 +91,15 @@
         <li>짬짜면</li>
       </ul>
     </div>
+    <!-- 세 번째 메뉴 -->
+    <div class="menu-box">
+      <div class="top-menu">검색</div>
+      <ul class="drop-menu">
+        <li>구글</li>
+        <li>네이버</li>
+        <li>다음</li>
+      </ul>
+    </div>
   </body>
   <script>
     // .drop-menu 클래스 아래의 li tag들을 모아서 menuList에 저장
@@ -112,6 +121,16 @@
       menuList[i].addEventListener("click", () => {
         const text = menuList[i].innerText;
         alert(text);
+
+        if (text === "구글") {
+          document.location.href = "https://google.com";
+        } else if (text === "네이버") {
+          document.location.href = "https://naver.com";
+        } else if (text === "다음") {
+          document.location.href = "https://daum.net";
+        } else if (text === "간짜장") {
+          confirm("간짜장 시키신 분~~~~!");
+        }
       });
     }
   </script>
