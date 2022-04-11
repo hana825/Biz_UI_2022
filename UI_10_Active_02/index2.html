@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      div.menu-box {
+        position: relative;
+        display: inline-block;
+        /* 가로방향 drop-menu 여러 개 배치될 때 drop submenu가 없는 box도 항상 상단에 있도록 하는 속성 */
+        vertical-align: top;
+      }
+      div.top-menu {
+        margin-left: 20px;
+        cursor: pointer;
+        background-color: blue;
+        color: #fff;
+        padding: 12px 16px;
+        text-align: center;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+      }
+      div.top-menu:hover {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+      }
+      /*
+      display : none → tag 자체가 화면에서 아예 사라져 없는 tag가 된다.
+      display : block → tag를 다시 나타나게
+      display 속성에는 애니메이션 관련 속성이 적용 많이 불편하다.
+      transition 속성은 아예 작동하지 않는다.
+
+      visibility : hidden; 에서 visibility : visible;로 변하는 속성을 부여하면 transition이 어느정도 적용된다.
+      
+      opasity : 0 → 완전히 투명한 상태 ~ 1 → 완전히 보이는 상태
+
+      */
+      ul.drop-menu {
+        min-height: 0;
+        visibility: hidden;
+        opacity: 0;
+        margin-left: 20px;
+        z-index: -1;
+        min-width: 100px;
+        transform: translateY(-2rem);
+        /* drop submenu 폭에 관계없이 top menu의 width를 유지하는 속성이 적용되려면 바깥쪽 box의 position:relative로 설정*/
+        position: absolute;
+        /* 최소 폭 유지: submenu가 접히는(wrap) 현상을 방지하기 위하여 submenu의 width가 가장 큰 요소의 값으로 설정한다. */
+        list-style: none;
+        transition: 1s;
+      }
+      ul.drop-menu li {
+        padding: 12px 16px;
+        cursor: pointer;
+      }
+      ul.drop-menu li:hover {
+        background-color: #eee;
+      }
+      /* div.menu-box에 hover가 되면 실제로는 ul.drop-menu에 style이 적용되어 display:block이 되고 drop-menu가 나타난다.*/
+      div.menu-box:hover ul.drop-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>반갑습니다</h1>
+    <!-- 첫 번째 메뉴 -->
+    <div class="menu-box">
+      <div class="top-menu">짜장면</div>
+      <ul class="drop-menu">
+        <li>보통</li>
+        <li>간짜장</li>
+        <li>쟁반짜장</li>
+      </ul>
+    </div>
+    <!-- 두 번째 메뉴 -->
+    <div class="menu-box">
+      <div class="top-menu">짬뽕</div>
+      <ul class="drop-menu">
+        <li>보통</li>
+        <li>해물짬뽕</li>
+        <li>짬짜면</li>
+      </ul>
+    </div>
+  </body>
+</html>
