@@ -92,4 +92,27 @@
       </ul>
     </div>
   </body>
+  <script>
+    // .drop-menu 클래스 아래의 li tag들을 모아서 menuList에 저장
+    // menuList에는 현재 문서에서 조건에 맞는 li tag를 모두 가져와써 menuList를 배열로 만들어준다.
+    const menuList = document.querySelectorAll(".drop-menu li");
+
+    // li tag는 여러개가 존재 하므로 아래와 같이 각각의 요소에 eventHandler를 추가해야한다.
+    // li tag 개수만큼 코드를 반복하여 작성해야 하고, li tag의 개수가 몇 개인지 항상 알아야 한다.
+    // 상당히 불편한 코드가 되기때문에 for()문을 이용해서 간단하게 처리한다.
+    // menuList[0].addEventListener("click", () => {
+    //   const text = menuList[0].innerText;
+    //   alert(text);
+    // });
+
+    // let 키워드는 값이 변동되는 변수를 선언한다
+    for (let i = 0; i < menuList.length; i++) {
+      // eventListener 설정, event Handler 설정
+      // li tag를 클릭하면 li tag의 text(innerText 속성값)를 text변수에 담고 alert창으로 보여라
+      menuList[i].addEventListener("click", () => {
+        const text = menuList[i].innerText;
+        alert(text);
+      });
+    }
+  </script>
 </html>
