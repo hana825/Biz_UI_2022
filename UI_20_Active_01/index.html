@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학사관리페이지</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        header {
+            padding: 20px 0;
+            text-align: center;
+            background-color: seagreen;
+            color: #fff;
+        }
+        nav{
+            background-color: #222;
+            /* position: fixed; */
+            z-index: 1;
+            width: 100%;
+        }
+        nav ul {
+            display: flex;
+            color: #fff;
+            list-style: none;
+            width: 100%;
+        }
+        nav li {
+            padding: 12px 16px;
+            border-bottom: 3px solid transparent;
+            transition: border 0.5s ease-out;
+        }
+        nav li:hover {
+            border-bottom: 3px solid green;
+            cursor: pointer;
+        }
+        nav li:first-child {
+            margin-left: 20px;
+        }
+        nav li:nth-of-type(4){
+            margin-right: 20px;
+            margin-left: auto;
+        }
+
+        section {
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-around;
+            align-items: flex-end;
+        }
+        table {
+            margin: 0;
+            padding: 10px;
+            border-collapse: collapse;
+            box-sizing: border-box;
+        }
+        thead{ vertical-align: middle; }
+        thead tr {
+            background-color: #eee;
+            border-top: 2px solid #666;
+        }
+        td, th { padding: 15px 30px;}
+        tbody td { text-align: center;}
+        tbody tr { border-top: 1px solid #bbb;}
+        tbody tr:last-of-type { border-bottom: 1px solid #bbb;}
+
+
+        #btn_add {
+            padding-top: 10px;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+        }
+        #btn_add input {
+            background-color: seagreen;
+            color: white;
+            font-weight: 600;
+            padding: 10px 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            border-style: none;
+        }
+        #btn_add input:hover {
+            background-color: rgb(34, 77, 53);
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <h1>ㅇㅇ대학교 학사관리 2022 V1</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li>학생정보</li>
+            <li>성적일람표</li>
+            <li>로그인</li>
+        </ul>
+    </nav>
+    <section>
+        <div>
+        <table>
+            <thead>
+            <tr>
+                <th>학번</th>
+                <th>이름</th>
+                <th>전공</th>
+                <th>학년</th>
+                <th>주소</th>
+                <th>전화번호</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>20220001</td>
+                <td>홍길동</td>
+                <td>컴퓨터공학</td>
+                <td>2</td>
+                <td>서울시 동대문구</td>
+                <td>02-222-1234</td>
+            </tr>
+            <tr>
+                <td>20220002</td>
+                <td>성춘향</td>
+                <td>전자공학</td>
+                <td>3</td>
+                <td>전라북도 익산시</td>
+                <td>063-111-1234</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div id="btn_add"><input type="button" value="학생정보 추가"></div>
+    </section>
+
+</body>
+</html>
